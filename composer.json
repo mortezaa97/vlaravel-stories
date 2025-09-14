@@ -1,0 +1,55 @@
+{
+    "name": "mortezaa97/stories",
+    "description": "A Laravel package designed to implement a stories feature similar to Instagram Stories or Google Web Stories.",
+    "keywords": [
+        "mortezaa97",
+        "stories"
+    ],
+    "homepage": "https://github.com/mortezaa97/stories",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "morteza jafari",
+            "email": "mortezajafari76@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0",
+        "mortezaa97/reviews": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mortezaa97\\Stories\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mortezaa97\\Stories\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mortezaa97\\Stories\\StoriesServiceProvider"
+            ],
+            "aliases": {
+                "Stories": "Mortezaa97\\Stories\\StoriesFacade"
+            }
+        }
+    }
+}
