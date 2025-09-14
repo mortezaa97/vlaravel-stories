@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Mortezaa97\Stories\Filament\Resources\Stories;
 
-use App\Models\Story;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -17,6 +16,7 @@ use Mortezaa97\Stories\Filament\Resources\Stories\Pages\EditStory;
 use Mortezaa97\Stories\Filament\Resources\Stories\Pages\ListStories;
 use Mortezaa97\Stories\Filament\Resources\Stories\Schemas\StoryForm;
 use Mortezaa97\Stories\Filament\Resources\Stories\Tables\StoriesTable;
+use Mortezaa97\Stories\Models\Story;
 
 class StoryResource extends Resource
 {
