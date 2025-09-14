@@ -6,6 +6,7 @@ namespace Mortezaa97\Stories;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Mortezaa97\Stories\Filament\Resources\Stories\StoryResource;
 use Mortezaa97\Stories\Models\Story;
 use Mortezaa97\Stories\Policies\StoryPolicy;
 
@@ -24,7 +25,6 @@ class StoriesServiceProvider extends ServiceProvider
 
         // Register policies
         Gate::policy(Story::class, StoryPolicy::class);
-
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('stories.php'),
