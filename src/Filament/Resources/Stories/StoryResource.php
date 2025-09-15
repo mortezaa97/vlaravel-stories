@@ -22,9 +22,14 @@ class StoryResource extends Resource
 {
     protected static ?string $model = Story::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationLabel = 'استوری ها';
 
-    protected static ?string $recordTitleAttribute = 'story';
+    protected static ?string $modelLabel = 'استوری';
+
+    protected static ?string $pluralModelLabel = 'استوری ها';
+
+    protected static string|null|\UnitEnum $navigationGroup = 'تنظیمات';
+    protected static ?string $recordTitleAttribute = 'استوری';
 
     public static function form(Schema $schema): Schema
     {
