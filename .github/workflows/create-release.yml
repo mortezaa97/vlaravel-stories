@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # ✅ allow creating tags and releases
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -16,22 +19,23 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for versioning
 
+      # Set up Git identity (required for tagging)
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       # Set up PHP environment
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2' # Adjust to your Laravel package's PHP version
+          php-version: '8.2'
           tools: composer
           coverage: none
 
       # Install dependencies
       - name: Install Composer dependencies
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
-
-      # Run tests (optional, but recommended before releasing)
-#      - name: Run tests
-#        run: composer test
-#        continue-on-error: false # Fail the workflow if tests fail
 
       # Get latest tag
       - name: Get latest tag
