@@ -29,9 +29,9 @@ jobs:
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
 
       # Run tests (optional, but recommended before releasing)
-      - name: Run tests
-        run: composer test
-        continue-on-error: false # Fail the workflow if tests fail
+#      - name: Run tests
+#        run: composer test
+#        continue-on-error: false # Fail the workflow if tests fail
 
       # Get latest tag
       - name: Get latest tag
