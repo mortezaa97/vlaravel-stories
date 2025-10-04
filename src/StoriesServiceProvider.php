@@ -6,7 +6,6 @@ namespace Mortezaa97\Stories;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use Mortezaa97\Stories\Filament\Resources\Stories\StoryResource;
 use Mortezaa97\Stories\Models\Story;
 use Mortezaa97\Stories\Policies\StoryPolicy;
 

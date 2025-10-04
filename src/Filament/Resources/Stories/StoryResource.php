@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Mortezaa97\Stories\Filament\Resources\Stories;
 
-use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -17,6 +15,7 @@ use Mortezaa97\Stories\Filament\Resources\Stories\Pages\ListStories;
 use Mortezaa97\Stories\Filament\Resources\Stories\Schemas\StoryForm;
 use Mortezaa97\Stories\Filament\Resources\Stories\Tables\StoriesTable;
 use Mortezaa97\Stories\Models\Story;
+use UnitEnum;
 
 class StoryResource extends Resource
 {
@@ -28,7 +27,8 @@ class StoryResource extends Resource
 
     protected static ?string $pluralModelLabel = 'استوری ها';
 
-    protected static string|null|\UnitEnum $navigationGroup = 'تنظیمات';
+    protected static string|null|UnitEnum $navigationGroup = 'تنظیمات';
+
     protected static ?string $recordTitleAttribute = 'استوری';
 
     public static function form(Schema $schema): Schema

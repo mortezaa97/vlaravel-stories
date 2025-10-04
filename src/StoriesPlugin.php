@@ -6,7 +6,6 @@ namespace Mortezaa97\Stories;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use Mortezaa97\Reviews\Filament;
 use Mortezaa97\Stories\Filament\Resources\Stories\StoryResource;
 
 class StoriesPlugin implements Plugin
