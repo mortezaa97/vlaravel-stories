@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Mortezaa97\Stories\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Page;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Mortezaa97\Pages\Models\Page;
 use Mortezaa97\Stories\Http\Resources\StoryResource;
 use Mortezaa97\Stories\Models\Story;
 
