@@ -29,7 +29,7 @@ class StoryResource extends Resource
 
     protected static string|null|UnitEnum $navigationGroup = 'تنظیمات';
 
-    protected static ?string $recordTitleAttribute = 'استوری';
+    protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Schema $schema): Schema
     {
