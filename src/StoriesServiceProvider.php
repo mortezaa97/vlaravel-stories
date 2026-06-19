@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mortezaa97\Stories;
 
+use Mortezaa97\Stories\Concerns\PublishesPackageAssets;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Mortezaa97\Stories\Models\Story;
@@ -11,6 +12,8 @@ use Mortezaa97\Stories\Policies\StoryPolicy;
 
 class StoriesServiceProvider extends ServiceProvider
 {
+    use PublishesPackageAssets;
+
     /**
      * Bootstrap package services.
      */
@@ -29,9 +32,7 @@ class StoriesServiceProvider extends ServiceProvider
                 __DIR__ . '/../config/config.php' => config_path('stories.php'),
             ], 'config');
 
-            $this->publishes([
-                __DIR__ . '/../database/migrations' => database_path('migrations'),
-            ], 'migrations');
+            $this->publishPackageAssets('stories');
         }
     }
 
